@@ -60,7 +60,7 @@
     .accordion-tab {
         display: flex;
         flex-direction: column;
-        padding: 0 0 20px 0px;
+        padding: 0px;
         border-bottom: 2px solid var(--offwhite);
 
         // Style exceptions for last tab of the list
@@ -78,6 +78,10 @@
             align-items: center;
             cursor: pointer;
 
+            &:focus {
+                outline: none;
+            }
+
             // Title text
             .acc-tab-title {
                 font-size: 17px;
@@ -93,31 +97,29 @@
                 }
             }
 
-            &:hover .acc-tab-title {
+            &:hover .acc-tab-title, &:focus .acc-tab-title {
                 color: var(--bright-purple);
             }
 
             // Accordion tab header icon
-            img {
+            .acc-tab-state-ico {
                 min-width: 30px;
                 width: 30px;
                 min-height: 30px;
                 height: 30px;
                 margin-left: 20px;
+                background-image: url("../img/icon-plus.svg");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
             }
         }
 
         // Collapsable accordion tab area
         .acc-tab-content {
-            display: flex;
+            display: none;
             flex-direction: column;
             gap: 8px;
-            // margin-top: 28px;
-
-            // media query .acc-tab-title
-            @include global.desktop {
-                // margin-top: 25px;
-            }
 
             p {
                 margin: 0;
@@ -134,6 +136,22 @@
 
         }
 
+    }
+
+    // rules applied when an accordion tab is opened (closed is considered default)
+    .accordion-tab.acc-opened-tab {
+
+        padding: 0 0 20px 0px;
+
+        // Tab text paragraph
+        .acc-tab-content {
+            display: flex;
+        }
+
+        // Accordion tab header icon
+        .acc-tab-state-ico {
+            background-image: url("../img/icon-minus.svg");
+        }
     }
 
 

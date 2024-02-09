@@ -28,6 +28,7 @@ body {
 }
 
 #Challenge_result {
+    min-height: 88vh;
     flex-grow: 1;
     background-image: url("../img/background-pattern-mobile.svg");
     background-position: top;
@@ -36,7 +37,7 @@ body {
     padding: 18vh 25px 20px 25px;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
     @include desktop {
         background-image: url("../img/background-pattern-desktop.svg");

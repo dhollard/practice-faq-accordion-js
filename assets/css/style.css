@@ -19,6 +19,7 @@ body {
 }
 
 #Challenge_result {
+  min-height: 88vh;
   flex-grow: 1;
   background-image: url("../img/background-pattern-mobile.svg");
   background-position: top;
@@ -27,7 +28,7 @@ body {
   padding: 18vh 25px 20px 25px;
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
 }
 @media (min-width: 992px) {
   #Challenge_result {
@@ -74,7 +75,7 @@ body {
 .attribution {
   font-size: 12px;
   text-align: center;
-  padding: 0 10px;
+  padding: 20px 10px;
 }
 .attribution a {
   color: #FF6666;
@@ -131,7 +132,7 @@ body {
 .accordion-container .accordion-tab {
   display: flex;
   flex-direction: column;
-  padding: 0 0 20px 0px;
+  padding: 0px;
   border-bottom: 2px solid var(--offwhite);
 }
 .accordion-container .accordion-tab:last-of-type {
@@ -146,6 +147,9 @@ body {
   align-items: center;
   cursor: pointer;
 }
+.accordion-container .accordion-tab .acc-tab-header:focus {
+  outline: none;
+}
 .accordion-container .accordion-tab .acc-tab-header .acc-tab-title {
   font-size: 17px;
   margin: 0;
@@ -159,18 +163,22 @@ body {
     padding: 20px 0 25px 0;
   }
 }
-.accordion-container .accordion-tab .acc-tab-header:hover .acc-tab-title {
+.accordion-container .accordion-tab .acc-tab-header:hover .acc-tab-title, .accordion-container .accordion-tab .acc-tab-header:focus .acc-tab-title {
   color: var(--bright-purple);
 }
-.accordion-container .accordion-tab .acc-tab-header img {
+.accordion-container .accordion-tab .acc-tab-header .acc-tab-state-ico {
   min-width: 30px;
   width: 30px;
   min-height: 30px;
   height: 30px;
   margin-left: 20px;
+  background-image: url("../img/icon-plus.svg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .accordion-container .accordion-tab .acc-tab-content {
-  display: flex;
+  display: none;
   flex-direction: column;
   gap: 8px;
 }
@@ -185,4 +193,13 @@ body {
   .accordion-container .accordion-tab .acc-tab-content p {
     font-size: 16px;
   }
+}
+.accordion-container .accordion-tab.acc-opened-tab {
+  padding: 0 0 20px 0px;
+}
+.accordion-container .accordion-tab.acc-opened-tab .acc-tab-content {
+  display: flex;
+}
+.accordion-container .accordion-tab.acc-opened-tab .acc-tab-state-ico {
+  background-image: url("../img/icon-minus.svg");
 }/*# sourceMappingURL=style.css.map */
