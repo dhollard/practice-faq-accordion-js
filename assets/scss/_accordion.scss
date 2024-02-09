@@ -1,0 +1,140 @@
+@use 'global';
+
+// Accordion top container
+.accordion-container {
+    width: 100%;
+    max-width: 550px;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    padding: 30px 22px 30px 22px;
+
+    // media query .accordion-container
+    @include global.desktop {
+        padding: 35px 40px 30px 40px;
+        border-radius: 15px;
+    }
+
+    // Accordion header (title + decorative icon)
+    .accordion-header {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+
+        // Title text
+        .accordion-title {
+            font-size: 34px;
+            color: var(--dark-purple);
+            margin: 0;
+            font-weight: 700;
+
+            // media query .accordion-title
+            @include global.desktop {
+                font-size: 52px;
+            }
+        }
+
+        // Icon
+        img {
+            min-width: 28px;
+            width: 28px;
+            min-height: 28px;
+            height: 28px;
+            margin-right: 18px;
+
+            // media query img inside .accordion-header
+            @include global.desktop {
+                min-width: 38px;
+                width: 38px;
+                min-height: 38px;
+                height: 38px;
+                margin-right: 25px;
+            }
+        }
+
+    }
+
+    // Accordion collapsible tab block
+    .accordion-tab {
+        display: flex;
+        flex-direction: column;
+        padding: 0 0 20px 0px;
+        border-bottom: 2px solid var(--offwhite);
+
+        // Style exceptions for last tab of the list
+        &:last-of-type {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        // Always visible part of each accordion tab (title and open state icon)
+        .acc-tab-header {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+
+            // Title text
+            .acc-tab-title {
+                font-size: 17px;
+                margin: 0;
+                font-weight: 600;
+                color: var(--dark-purple);
+                padding: 20px 0 28px 0;
+
+                // media query .acc-tab-title
+                @include global.desktop {
+                    line-height: 1.4;
+                    padding: 20px 0 25px 0;
+                }
+            }
+
+            &:hover .acc-tab-title {
+                color: var(--bright-purple);
+            }
+
+            // Accordion tab header icon
+            img {
+                min-width: 30px;
+                width: 30px;
+                min-height: 30px;
+                height: 30px;
+                margin-left: 20px;
+            }
+        }
+
+        // Collapsable accordion tab area
+        .acc-tab-content {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            // margin-top: 28px;
+
+            // media query .acc-tab-title
+            @include global.desktop {
+                // margin-top: 25px;
+            }
+
+            p {
+                margin: 0;
+                font-size: 15px;
+                font-weight: 400;
+                color: var(--grayish-purple);
+                line-height: 1.5;
+
+                // media query paragraphs inside .acc-tab-content
+                @include global.desktop {
+                    font-size: 16px;
+                }
+            }
+
+        }
+
+    }
+
+
+}
