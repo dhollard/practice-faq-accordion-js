@@ -65,13 +65,12 @@ document.addEventListener("keydown", function(event) {
             // Put focus on relevant element
             accordionTabHeaders[focusedIndex].focus();
         }
+    } else if (event.key === "Enter") {
+        event.preventDefault();
+        const focusedElement = document.activeElement;
+        if (accordionTabHeadersArray.includes(focusedElement)) {
+            // Toggle focused accordion tab
+            triggerAccordion(focusedElement);
+        }
     }
-});
-
-// Toggle accordion tab on focus
-accordionTabHeaders.forEach(function(tab) {
-    tab.addEventListener("focus", function() {
-        // Use function declared earlier to change accordion
-        triggerAccordion(tab);
-    });
 });

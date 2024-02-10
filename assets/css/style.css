@@ -83,16 +83,16 @@ body {
 
 .accordion-container {
   width: 100%;
-  max-width: 550px;
+  max-width: 500px;
   background-color: var(--white);
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 30px 22px 30px 22px;
+  padding: 30px 22px 0px 22px;
 }
 @media (min-width: 992px) {
   .accordion-container {
-    padding: 35px 40px 30px 40px;
+    padding: 35px 40px 10px 40px;
     border-radius: 15px;
   }
 }
@@ -146,6 +146,10 @@ body {
   justify-content: space-between;
   align-items: center;
   cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
 }
 .accordion-container .accordion-tab .acc-tab-header:focus {
   outline: none;

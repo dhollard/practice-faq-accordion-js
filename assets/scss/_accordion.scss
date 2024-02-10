@@ -3,16 +3,16 @@
 // Accordion top container
 .accordion-container {
     width: 100%;
-    max-width: 550px;
+    max-width: 500px;
     background-color: var(--white);
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    padding: 30px 22px 30px 22px;
+    padding: 30px 22px 0px 22px;
 
     // media query .accordion-container
     @include global.desktop {
-        padding: 35px 40px 30px 40px;
+        padding: 35px 40px 10px 40px;
         border-radius: 15px;
     }
 
@@ -77,6 +77,10 @@
             justify-content: space-between;
             align-items: center;
             cursor: pointer;
+            background: none;
+            border: none;
+            padding: 0;
+            text-align: left;
 
             &:focus {
                 outline: none;
