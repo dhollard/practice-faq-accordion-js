@@ -8,7 +8,7 @@
     display: flex;
     flex-direction: column;
     border-radius: 8px;
-    padding: 30px 22px 0px 22px;
+    padding: 25px 22px 0px 22px;
     box-shadow: 0px 25px 45px 1px rgba(47, 21, 51, 0.12);
 
     // media query .accordion-container
@@ -32,7 +32,7 @@
 
         // Title text
         .accordion-title {
-            font-size: 34px;
+            font-size: 32px;
             color: var(--dark-purple);
             margin: 0;
             font-weight: 700;
@@ -45,11 +45,11 @@
 
         // Icon
         img {
-            min-width: 28px;
-            width: 28px;
-            min-height: 28px;
-            height: 28px;
-            margin-right: 18px;
+            min-width: 25px;
+            width: 25px;
+            min-height: 25px;
+            height: 25px;
+            margin-right: 22px;
 
             // media query img inside .accordion-header
             @include global.desktop {
@@ -96,11 +96,11 @@
             // Title text
             .acc-tab-title {
                 font-family: 'Work Sans', sans-serif;
-                font-size: 17px;
+                font-size: 16px;
                 margin: 0;
                 font-weight: 600;
                 color: var(--dark-purple);
-                padding: 25px 0 25px 0;
+                padding: 22px 0 22px 0;
 
                 // media query .acc-tab-title
                 @include global.desktop {
@@ -146,7 +146,7 @@
 
             p {
                 margin: 0;
-                font-size: 15px;
+                font-size: 14px;
                 font-weight: 400;
                 color: var(--grayish-purple);
                 line-height: 1.5;

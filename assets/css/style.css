@@ -25,7 +25,7 @@ body {
   background-position: top;
   background-repeat: repeat-x;
   background-size: auto 235px;
-  padding: 19vh 25px 20px 25px;
+  padding: 18vh 25px 20px 25px;
   display: flex;
   justify-content: center;
   align-items: start;
@@ -34,6 +34,7 @@ body {
   #Challenge_result {
     background-image: url("../img/background-pattern-desktop.svg");
     background-size: auto 320px;
+    padding: 19vh 25px 20px 25px;
   }
 }
 
@@ -88,7 +89,7 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  padding: 30px 22px 0px 22px;
+  padding: 25px 22px 0px 22px;
   box-shadow: 0px 25px 45px 1px rgba(47, 21, 51, 0.12);
 }
 @media (min-width: 992px) {
@@ -110,7 +111,7 @@ body {
   }
 }
 .accordion-container .accordion-header .accordion-title {
-  font-size: 34px;
+  font-size: 32px;
   color: var(--dark-purple);
   margin: 0;
   font-weight: 700;
@@ -121,11 +122,11 @@ body {
   }
 }
 .accordion-container .accordion-header img {
-  min-width: 28px;
-  width: 28px;
-  min-height: 28px;
-  height: 28px;
-  margin-right: 18px;
+  min-width: 25px;
+  width: 25px;
+  min-height: 25px;
+  height: 25px;
+  margin-right: 22px;
 }
 @media (min-width: 992px) {
   .accordion-container .accordion-header img {
@@ -163,11 +164,11 @@ body {
 }
 .accordion-container .accordion-tab .acc-tab-header .acc-tab-title {
   font-family: "Work Sans", sans-serif;
-  font-size: 17px;
+  font-size: 16px;
   margin: 0;
   font-weight: 600;
   color: var(--dark-purple);
-  padding: 25px 0 25px 0;
+  padding: 22px 0 22px 0;
 }
 @media (min-width: 992px) {
   .accordion-container .accordion-tab .acc-tab-header .acc-tab-title {
@@ -205,7 +206,7 @@ body {
 }
 .accordion-container .accordion-tab .acc-tab-content p {
   margin: 0;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 400;
   color: var(--grayish-purple);
   line-height: 1.5;

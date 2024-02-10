@@ -34,7 +34,7 @@ body {
     background-position: top;
     background-repeat: repeat-x;
     background-size: auto 235px;
-    padding: 19vh 25px 20px 25px;
+    padding: 18vh 25px 20px 25px;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -42,5 +42,6 @@ body {
     @include desktop {
         background-image: url("../img/background-pattern-desktop.svg");
         background-size: auto 320px;
+        padding: 19vh 25px 20px 25px;
     }
 }
