@@ -9,6 +9,7 @@
     flex-direction: column;
     border-radius: 8px;
     padding: 30px 22px 0px 22px;
+    box-shadow: 0px 25px 45px 1px rgba(47, 21, 51, 0.10);
 
     // media query .accordion-container
     @include global.desktop {
@@ -22,6 +23,12 @@
         flex-direction: row;
         flex-wrap: nowrap;
         align-items: center;
+        margin-bottom: 10px;
+
+        // media query .accordion-header
+        @include global.desktop {
+            margin-bottom: 15px;
+        }
 
         // Title text
         .accordion-title {
@@ -101,7 +108,14 @@
                 }
             }
 
-            &:hover .acc-tab-title, &:focus .acc-tab-title {
+            // Only add hover style on non-touch device to avoid confusion of what is focused
+            @media (hover: hover) and (pointer: fine) {
+                &:hover .acc-tab-title {
+                    color: var(--bright-purple);
+                }
+            }
+
+            &:focus .acc-tab-title {
                 color: var(--bright-purple);
             }
 

@@ -89,6 +89,7 @@ body {
   flex-direction: column;
   border-radius: 8px;
   padding: 30px 22px 0px 22px;
+  box-shadow: 0px 25px 45px 1px rgba(47, 21, 51, 0.1);
 }
 @media (min-width: 992px) {
   .accordion-container {
@@ -101,6 +102,12 @@ body {
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
+  margin-bottom: 10px;
+}
+@media (min-width: 992px) {
+  .accordion-container .accordion-header {
+    margin-bottom: 15px;
+  }
 }
 .accordion-container .accordion-header .accordion-title {
   font-size: 34px;
@@ -167,7 +174,12 @@ body {
     padding: 20px 0 25px 0;
   }
 }
-.accordion-container .accordion-tab .acc-tab-header:hover .acc-tab-title, .accordion-container .accordion-tab .acc-tab-header:focus .acc-tab-title {
+@media (hover: hover) and (pointer: fine) {
+  .accordion-container .accordion-tab .acc-tab-header:hover .acc-tab-title {
+    color: var(--bright-purple);
+  }
+}
+.accordion-container .accordion-tab .acc-tab-header:focus .acc-tab-title {
   color: var(--bright-purple);
 }
 .accordion-container .accordion-tab .acc-tab-header .acc-tab-state-ico {
