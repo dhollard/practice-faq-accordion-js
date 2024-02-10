@@ -13,12 +13,20 @@ function triggerAccordion(tab) {
     accordionTabs.forEach(function(accordionTab) {
         if (accordionTab !== tab.closest(".accordion-tab")) {
             accordionTab.classList.remove("acc-opened-tab");
+            accordionTab.querySelector(".acc-tab-header").setAttribute("aria-expanded", "false");
         }
     });
 
     // Open/close clicked tab
+
+    // Add class to parent
     const parentTab = tab.closest(".accordion-tab");
     parentTab.classList.toggle("acc-opened-tab");
+    
+    // Toggle aria-expanded attribute (for accessibility purposes)
+    const tabAriaExpanded = tab.getAttribute("aria-expanded");
+    const tabAriaValue = tabAriaExpanded === "true" ? "false" : "true";
+    tab.setAttribute("aria-expanded", tabAriaValue);
 }
 
 /*
