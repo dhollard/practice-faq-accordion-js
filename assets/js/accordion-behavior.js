@@ -1,5 +1,5 @@
 /*
-    --- Get relevant elements and craft reusable function ---
+    --- Get relevant elements and toggle accordion with a reusable function ---
 */
 
 // Get every accordion tab header
@@ -34,11 +34,13 @@ accordionTabHeaders.forEach(function(tab) {
 });
 
 /*
-    --- Navigating and toggling through keyboard (tab, arrows, enter key) ---
+    --- Navigating and toggling through keyboard (tab, arrows, enter, home, end keys) ---
 */
 
 // When pressing keys, check if an accordion header is in focus and act accordingly
 document.addEventListener("keydown", function(event) {
+
+    // Ability to navigate up and down the accordion tabs with up/down arrows
     if (event.key === "ArrowUp" || event.key === "ArrowDown") {
         // Get currently focused element in document
         const focusedElement = document.activeElement;
@@ -65,12 +67,43 @@ document.addEventListener("keydown", function(event) {
             // Put focus on relevant element
             accordionTabHeaders[focusedIndex].focus();
         }
-    } else if (event.key === "Enter") {
+    }
+
+    // Ability to toggle tabs with "enter" key
+    else if (event.key === "Enter") {
         event.preventDefault();
         const focusedElement = document.activeElement;
         if (accordionTabHeadersArray.includes(focusedElement)) {
             // Toggle focused accordion tab
             triggerAccordion(focusedElement);
         }
+    }
+    
+    // Ability to go to first or last accordion tab via home/end keys
+    else if (event.key === "Home" || event.key === "End"){
+        
+        // Get currently focused element in document
+        const focusedElement = document.activeElement;
+
+        // Block default home/end scroll if focus is currently on an accordion header
+        if (accordionTabHeadersArray.includes(focusedElement)) {
+            event.preventDefault();
+        }
+
+        // Find current focused accordion tab header
+        let focusedIndex = accordionTabHeadersArray.findIndex(tab => tab === focusedElement);
+
+        // Move focus to first element if "home" is pressed
+        if (event.key === "Home") {
+            focusedIndex = 0;
+        }
+        // Move focus to next element if down arrow is pressed
+        else if (event.key === "End") {
+            focusedIndex = accordionTabHeaders.length - 1;
+        }
+
+        // Put focus on relevant element
+        accordionTabHeaders[focusedIndex].focus();
+
     }
 });
