@@ -121,9 +121,12 @@
 
         // Collapsable accordion tab area
         .acc-tab-content {
-            display: none;
+            display: flex;
+            max-height: 0px;
+            overflow: hidden;
             flex-direction: column;
             gap: 8px;
+            transition: max-height 0.4s ease-out;
 
             p {
                 margin: 0;
@@ -136,6 +139,10 @@
                 @include global.desktop {
                     font-size: 16px;
                 }
+
+                &:last-of-type {
+                    margin-bottom: 20px;
+                }
             }
 
         }
@@ -145,11 +152,9 @@
     // rules applied when an accordion tab is opened (closed is considered default)
     .accordion-tab.acc-opened-tab {
 
-        padding: 0 0 20px 0px;
-
         // Tab text paragraph
         .acc-tab-content {
-            display: flex;
+            max-height: 500px;
         }
 
         // Accordion tab header icon

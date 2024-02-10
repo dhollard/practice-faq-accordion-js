@@ -182,9 +182,12 @@ body {
   background-size: cover;
 }
 .accordion-container .accordion-tab .acc-tab-content {
-  display: none;
+  display: flex;
+  max-height: 0px;
+  overflow: hidden;
   flex-direction: column;
   gap: 8px;
+  transition: max-height 0.4s ease-out;
 }
 .accordion-container .accordion-tab .acc-tab-content p {
   margin: 0;
@@ -198,11 +201,11 @@ body {
     font-size: 16px;
   }
 }
-.accordion-container .accordion-tab.acc-opened-tab {
-  padding: 0 0 20px 0px;
+.accordion-container .accordion-tab .acc-tab-content p:last-of-type {
+  margin-bottom: 20px;
 }
 .accordion-container .accordion-tab.acc-opened-tab .acc-tab-content {
-  display: flex;
+  max-height: 500px;
 }
 .accordion-container .accordion-tab.acc-opened-tab .acc-tab-state-ico {
   background-image: url("../img/icon-minus.svg");
